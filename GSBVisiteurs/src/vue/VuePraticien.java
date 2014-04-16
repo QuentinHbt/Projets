@@ -4,9 +4,9 @@
  */
 package vue;
 
-import ctrl.C_Abstrait;
-import ctrl.C_Medicament;
-import ctrl.C_Praticien;
+import controleur.CtrlAbstrait;
+import controleur.CtrlMedicament;
+import controleur.CtrlPraticien;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -15,12 +15,12 @@ import javax.swing.JTextField;
  *
  * @author btssio
  */
-public class V_Praticiens extends V_Abstraite {
+public class VuePraticien extends VueAbstraite {
 DefaultComboBoxModel mcbChercher;
     /**
      * Creates new form V_Connexion
      */
-    public V_Praticiens(C_Abstrait ctrlAbstrait) {
+    public VuePraticien(CtrlAbstrait ctrlAbstrait) {
         super(ctrlAbstrait);
         initComponents();
         mcbChercher= new DefaultComboBoxModel();
@@ -309,19 +309,19 @@ DefaultComboBoxModel mcbChercher;
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void btnSuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuivantActionPerformed
-        ((C_Praticien)controleur).suivant();
+        ((CtrlPraticien)controleur).suivant();
     }//GEN-LAST:event_btnSuivantActionPerformed
 
     private void cbChercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbChercherActionPerformed
-        ((C_Praticien)controleur).praticienSelectionner();
+        ((CtrlPraticien)controleur).praticienSelectionner();
     }//GEN-LAST:event_cbChercherActionPerformed
 
     private void btnPrecedentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrecedentActionPerformed
-        ((C_Praticien)controleur).precedant();
+        ((CtrlPraticien)controleur).precedant();
     }//GEN-LAST:event_btnPrecedentActionPerformed
 
     private void btnFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermerActionPerformed
-        ((C_Praticien)controleur).praticienQuitter();
+        ((CtrlPraticien)controleur).praticienQuitter();
     }//GEN-LAST:event_btnFermerActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

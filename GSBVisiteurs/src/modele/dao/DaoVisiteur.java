@@ -15,8 +15,13 @@ import java.util.*;
  */
 public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
      private DaoLabo daoLabo = new DaoLabo();
+     
     /**
-     * Non implémenté
+     * create - non implémentée
+     * 
+     * @param unVisiteur
+     * @return
+     * @throws Exception 
      */
     @Override
     public int create(Visiteur unVisiteur) throws Exception {
@@ -24,11 +29,11 @@ public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
     }
 
     /**
-     * Lire un enregistrement d'après son identifiant
+     * getOne - Lire un enregistrement d'après son identifiant
      *
-     * @param identifiant métier de l'objet recherché
+     * @param idVisiteur métier de l'objet recherché
      * @return objet métier trouvé, ou null sinon
-     * @throws Exception
+     * @throws DaoException
      */
         public Visiteur getOne(String idVisiteur) throws DaoException {
         Visiteur result = null;
@@ -51,14 +56,14 @@ public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
     }
 
     /**
-     * getAll
-     *
-     * @return ArrayList de l'ensemble des occurences d'equipiers de la table
-     * EQUIPIER
+     * getAll - retourne la liste de tous les visiteurs
+     * 
+     * @return
+     * @throws DaoException 
      */
     @Override
     public ArrayList<Visiteur> getAll() throws DaoException {
-        ArrayList<Visiteur> result = new ArrayList<Visiteur>();
+        ArrayList<Visiteur> result = new ArrayList<>();
         ResultSet rs;
         // préparer la requête
         String requete = "SELECT * FROM VISITEUR"
@@ -78,7 +83,12 @@ public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
     }
 
     /**
-     * Non implémenté
+     * update - non implémentée
+     * 
+     * @param idMetier
+     * @param objetMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int update(Integer idMetier, Visiteur objetMetier) throws Exception {
@@ -86,14 +96,27 @@ public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
     }
 
     /**
-     * Non implémenté
+     * delete - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int delete(Integer idMetier) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-      public boolean verification(String login, java.util.Date password) throws DaoException{
-         boolean result = false;
+    
+    /**
+     * verification - retourne booleen pour verifier login et mdp
+     * 
+     * @param login
+     * @param password
+     * @return
+     * @throws DaoException 
+     */
+    public boolean verification(String login, java.util.Date password) throws DaoException{
+        boolean result = false;
         ResultSet rs = null;
         java.sql.Date passwordSql = new java.sql.Date(password.getTime());
       
@@ -120,35 +143,31 @@ public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
     //  Méthodes privées
     //----------------------------------------------------------------------
     /**
-     * chargerUnEnregistrementEquipier Instancie un objet equipier avec les
-     * valeurs lues dans la base de données La jointure avec la table PRESENCE
-     * n'est pas effectuée
-     *
-     * @param rs enregistrement de la table Equipier courant
-     * @return un objet Equipier, dont la liste des "présences" n'est pas
-     * renseignée
-     * @throws DaoException
+     * chargerUnEnregistrement - permet de charger un visiteur
+     * 
+     * @param rs
+     * @return
+     * @throws DaoException 
      */
-    
     private Visiteur chargerUnEnregistrement(ResultSet rs) throws DaoException {
         try {
             Visiteur visiteur = new Visiteur(null,null,null,null,null,null,null,null,null);
         //    java.util.Date dateEmbauche = new java.util.Date(rs.getDate("VIS_DATEEMBAUCHE").getTime());
        
    
-            visiteur.setVis_Matricule(rs.getString("VIS_MATRICULE"));
-            visiteur.setVis_Nom(rs.getString("VIS_NOM"));
-            visiteur.setVis_Prenom(rs.getString("VIS_PRENOM"));
-            visiteur.setVis_Adresse(rs.getString("VIS_ADRESSE"));
-            visiteur.setVis_Cp(rs.getString("VIS_CP"));
-            visiteur.setVis_Ville(rs.getString("VIS_VILLE"));
-            visiteur.setVis_DateEmbauche(rs.getDate("VIS_DATEEMBAUCHE"));
+            visiteur.setMatricule(rs.getString("VIS_MATRICULE"));
+            visiteur.setNom(rs.getString("VIS_NOM"));
+            visiteur.setPrenom(rs.getString("VIS_PRENOM"));
+            visiteur.setAdresse(rs.getString("VIS_ADRESSE"));
+            visiteur.setCp(rs.getString("VIS_CP"));
+            visiteur.setVille(rs.getString("VIS_VILLE"));
+            visiteur.setDateEmbauche(rs.getDate("VIS_DATEEMBAUCHE"));
             visiteur.setLabo(daoLabo.getOne(rs.getString("LAB_CODE")));
             
             if(rs.getString("SEC_CODE")!=null){
                 Secteur secteur = new Secteur(null,null);
-                secteur.setSec_Code(rs.getString("SEC_CODE"));
-                secteur.setSec_Libelle(rs.getString("SEC_LIBELLE"));
+                secteur.setCode(rs.getString("SEC_CODE"));
+                secteur.setSecteur_Libelle(rs.getString("SEC_LIBELLE"));
                 visiteur.setSecteur(secteur);
             }
             /*
@@ -168,6 +187,13 @@ public class DaoVisiteur implements DaoInterface<Visiteur, Integer> {
         }
     } 
 
+    /**
+     * getOne - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
+     */
     @Override
     public Visiteur getOne(Integer idMetier) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

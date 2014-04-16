@@ -12,72 +12,72 @@ import java.util.Date;
  */
 public class Rapport_Visite {
     Visiteur visiteur;
-    int rap_Num;
+    int rapport_Num;
     Praticien practicien;
-    Date rap_Date;
-    String rap_Bilan;
-    String rap_Motif;
+    Date rapport_Date;
+    String rapport_Bilan;
+    String rapport_Motif;
 
-    public Rapport_Visite(Visiteur visiteur, int rap_Num, Praticien practicien, Date rap_Date, String rap_Bilan, String rap_Motif) {
-        this.visiteur = visiteur;
-        this.rap_Num = rap_Num;
-        this.practicien = practicien;
-        this.rap_Date = rap_Date;
-        this.rap_Bilan = rap_Bilan;
-        this.rap_Motif = rap_Motif;
+    public Rapport_Visite(Visiteur Visiteur, int Rapport_Num, Praticien Practicien, Date Rapport_Date, String Rapport_Bilan, String Rapport_Motif) {
+        this.visiteur = Visiteur;
+        this.rapport_Num = Rapport_Num;
+        this.practicien = Practicien;
+        this.rapport_Date = Rapport_Date;
+        this.rapport_Bilan = Rapport_Bilan;
+        this.rapport_Motif = Rapport_Motif;
     }
 
     @Override
     public String toString() {
-        return "Rapport De Visite N " + rap_Num;
+        return "Rapport De Visite N " + rapport_Num;
     }
 
     public Visiteur getVisiteur() {
         return visiteur;
     }
 
-    public void setVisiteur(Visiteur visiteur) {
-        this.visiteur = visiteur;
+    public void setVisiteur(Visiteur Visiteur) {
+        this.visiteur = Visiteur;
     }
 
-    public int getRap_Num() {
-        return rap_Num;
+    public int getRapport_Num() {
+        return rapport_Num;
     }
 
-    public void setRap_Num(int rap_Num) {
-        this.rap_Num = rap_Num;
+    public void setRapport_Num(int Rapport_Num) {
+        this.rapport_Num = Rapport_Num;
     }
 
     public Praticien getPracticien() {
         return practicien;
     }
 
-    public void setPracticien(Praticien practicien) {
-        this.practicien = practicien;
+    public void setPracticien(Praticien Practicien) {
+        this.practicien = Practicien;
     }
 
-    public Date getRap_Date() {
-        return rap_Date;
+    public Date getRapport_Date() {
+        return rapport_Date;
     }
 
-    public void setRap_Date(Date rap_Date) {
-        this.rap_Date = rap_Date;
+    public void setRapport_Date(Date Rapport_Date) {
+        this.rapport_Date = Rapport_Date;
     }
 
-    public String getRap_Bilan() {
-        return rap_Bilan;
+    public String getRapport_Bilan() {
+        return rapport_Bilan;
     }
 
-    public void setRap_Bilan(String rap_Bilan) {
-        this.rap_Bilan = rap_Bilan;
+    public void setRapport_Bilan(String Rapport_Bilan) {
+        this.rapport_Bilan = Rapport_Bilan;
     }
 
-    public String getRap_Motif() {
-        return rap_Motif;
+    public String getRapport_Motif() {
+        return rapport_Motif;
     }
 
-    public void setRap_Motif(String rap_Motif) {
-        this.rap_Motif = rap_Motif;
+    public void setRapport_Motif(String Rapport_Motif) {
+        this.rapport_Motif = Rapport_Motif;
     }
     
     

@@ -9,85 +9,85 @@ package modele.metier;
  * @author btssio
  */
 public class Praticien {
-    int pra_Num;
-    String pra_Nom;
-    String pra_Prenom;
-    String pra_Adresse;
-    String pra_Cp;
-    String pra_Ville;
-    Float pra_CoefNotoriete;
+    int praticien_Num;
+    String praticien_Nom;
+    String praticien_Prenom;
+    String praticien_Adresse;
+    String praticien_Cp;
+    String praticien_Ville;
+    Float praticien_CoefNotoriete;
     Type_Praticien type_Practicien;
 
-    public Praticien(int pra_Num, String pra_Nom, String pra_Prenom, String pra_Adresse, String pra_Cp, String pra_Ville, Float pra_CoefNotoriete, Type_Praticien type_Practicien) {
-        this.pra_Num = pra_Num;
-        this.pra_Nom = pra_Nom;
-        this.pra_Prenom = pra_Prenom;
-        this.pra_Adresse = pra_Adresse;
-        this.pra_Cp = pra_Cp;
-        this.pra_Ville = pra_Ville;
-        this.pra_CoefNotoriete = pra_CoefNotoriete;
+    public Praticien(int praticien_Num, String praticien_Nom, String praticien_Prenom, String praticien_Adresse, String praticien_Cp, String praticien_Ville, Float praticien_CoefNotoriete, Type_Praticien type_Practicien) {
+        this.praticien_Num = praticien_Num;
+        this.praticien_Nom = praticien_Nom;
+        this.praticien_Prenom = praticien_Prenom;
+        this.praticien_Adresse = praticien_Adresse;
+        this.praticien_Cp = praticien_Cp;
+        this.praticien_Ville = praticien_Ville;
+        this.praticien_CoefNotoriete = praticien_CoefNotoriete;
         this.type_Practicien = type_Practicien;
     }
 
     @Override
     public String toString() {
-        return pra_Num + " " + pra_Nom + " " + pra_Prenom;
+        return "Praticien{" + " num=" + praticien_Num + ", nom=" + praticien_Nom + ", prenom=" + praticien_Prenom;
     }
 
-    public int getPra_Num() {
-        return pra_Num;
+    public int getPraticien_Num() {
+        return praticien_Num;
     }
 
-    public void setPra_Num(int pra_Num) {
-        this.pra_Num = pra_Num;
+    public void setPraticien_Num(int praticien_Num) {
+        this.praticien_Num = praticien_Num;
     }
 
-    public String getPra_Nom() {
-        return pra_Nom;
+    public String getPraticien_Nom() {
+        return praticien_Nom;
     }
 
-    public void setPra_Nom(String pra_Nom) {
-        this.pra_Nom = pra_Nom;
+    public void setPraticien_Nom(String praticien_Nom) {
+        this.praticien_Nom = praticien_Nom;
     }
 
     public String getPra_Prenom() {
-        return pra_Prenom;
+        return praticien_Prenom;
     }
 
     public void setPra_Prenom(String pra_Prenom) {
-        this.pra_Prenom = pra_Prenom;
+        this.praticien_Prenom = pra_Prenom;
     }
 
-    public String getPra_Adresse() {
-        return pra_Adresse;
+    public String getPraticien_Adresse() {
+        return praticien_Adresse;
     }
 
-    public void setPra_Adresse(String pra_Adresse) {
-        this.pra_Adresse = pra_Adresse;
+    public void setPraticien_Adresse(String praticien_Adresse) {
+        this.praticien_Adresse = praticien_Adresse;
     }
 
-    public String getPra_Cp() {
-        return pra_Cp;
+    public String getPraticien_Cp() {
+        return praticien_Cp;
     }
 
-    public void setPra_Cp(String pra_Cp) {
-        this.pra_Cp = pra_Cp;
+    public void setPraticien_Cp(String praticien_Cp) {
+        this.praticien_Cp = praticien_Cp;
     }
 
-    public String getPra_Ville() {
-        return pra_Ville;
+    public String getPraticien_Ville() {
+        return praticien_Ville;
     }
 
-    public void setPra_Ville(String pra_Ville) {
-        this.pra_Ville = pra_Ville;
+    public void setPraticien_Ville(String praticien_Ville) {
+        this.praticien_Ville = praticien_Ville;
     }
 
-    public Float getPra_CoefNotoriete() {
-        return pra_CoefNotoriete;
+    public Float getPraticien_CoefNotoriete() {
+        return praticien_CoefNotoriete;
     }
 
-    public void setPra_CoefNotoriete(Float pra_CoefNotoriete) {
-        this.pra_CoefNotoriete = pra_CoefNotoriete;
+    public void setPraticien_CoefNotoriete(Float praticien_CoefNotoriete) {
+        this.praticien_CoefNotoriete = praticien_CoefNotoriete;
     }
 
     public Type_Praticien getType_Practicien() {

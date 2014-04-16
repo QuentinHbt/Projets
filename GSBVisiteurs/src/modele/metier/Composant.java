@@ -9,33 +9,33 @@ package modele.metier;
  * @author btssio
  */
 public class Composant {
-    String cmp_Code;
-    String cmp_Libelle;
+    String composant_Code;
+    String composant_Libelle;
 
-    public Composant(String cmp_Code, String cmp_Libelle) {
-        this.cmp_Code = cmp_Code;
-        this.cmp_Libelle = cmp_Libelle;
+    public Composant(String composant_Code, String composant_Libelle) {
+        this.composant_Code = composant_Code;
+        this.composant_Libelle = composant_Libelle;
     }
 
     @Override
     public String toString() {
-        return "Composant{" + "cmp_Code=" + cmp_Code + ", cmp_Libelle=" + cmp_Libelle + '}';
+        return "Composant{" + "Code=" + composant_Code + ", Libelle=" + composant_Libelle + '}';
     }
 
-    public String getCmp_Code() {
-        return cmp_Code;
+    public String getComposant_Code() {
+        return composant_Code;
     }
 
-    public void setCmp_Code(String cmp_Code) {
-        this.cmp_Code = cmp_Code;
+    public void setComposant_Code(String composant_Code) {
+        this.composant_Code = composant_Code;
     }
 
-    public String getCmp_Libelle() {
-        return cmp_Libelle;
+    public String getComposant_Libelle() {
+        return composant_Libelle;
     }
 
-    public void setCmp_Libelle(String cmp_Libelle) {
-        this.cmp_Libelle = cmp_Libelle;
+    public void setComposant_Libelle(String composant_Libelle) {
+        this.composant_Libelle = composant_Libelle;
     }
     
     

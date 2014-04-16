@@ -12,11 +12,16 @@ import java.util.*;
 
 /**
  * Classe DAO pour la classe Labo
+ * @author Benoit
  */
 public class DaoLabo implements DaoInterface<Labo, Integer> {
 
     /**
-     * Non implémenté
+     * Create - non implémentée
+     * 
+     * @param unLabo
+     * @return
+     * @throws Exception 
      */
     @Override
     public int create(Labo unLabo) throws Exception {
@@ -24,11 +29,11 @@ public class DaoLabo implements DaoInterface<Labo, Integer> {
     }
 
     /**
-     * Lire un enregistrement d'après son identifiant
+     * GetOne - Lire un enregistrement d'après son identifiant
      *
-     * @param identifiant métier de l'objet recherché
+     * @param idLabo métier de l'objet recherché
      * @return objet métier trouvé, ou null sinon
-     * @throws Exception
+     * @throws DaoException
      */
         public Labo getOne(String idLabo) throws DaoException {
         Labo result = null;
@@ -77,7 +82,12 @@ public class DaoLabo implements DaoInterface<Labo, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Update - non implémentée
+     * 
+     * @param idMetier
+     * @param objetMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int update(Integer idMetier, Labo objetMetier) throws Exception {
@@ -85,7 +95,11 @@ public class DaoLabo implements DaoInterface<Labo, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Delete - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int delete(Integer idMetier) throws Exception {
@@ -98,33 +112,33 @@ public class DaoLabo implements DaoInterface<Labo, Integer> {
     //  Méthodes privées
     //----------------------------------------------------------------------
     /**
-     * chargerUnEnregistrementEquipier Instancie un objet equipier avec les
-     * valeurs lues dans la base de données La jointure avec la table PRESENCE
-     * n'est pas effectuée
-     *
-     * @param rs enregistrement de la table Equipier courant
-     * @return un objet Equipier, dont la liste des "présences" n'est pas
-     * renseignée
-     * @throws DaoException
+     * chargerUnEnregistrement Instancie un objet labo avec les valeurs lues
+     * dans la BDD avec la table Labo
+     * @param rs
+     * @return
+     * @throws DaoException 
      */
-    
     private Labo chargerUnEnregistrement(ResultSet rs) throws DaoException {
         try {
             
                 Labo labo = new Labo(null,null,null);
-                labo.setLab_Code(rs.getString("LAB_CODE"));
-                labo.setLab_ChefVente(rs.getString("LAB_CHEFVENTE"));
-                labo.setLab_Nom(rs.getString("LAB_NOM"));
-    
-            
-            
-            
+                labo.setLabo_Code(rs.getString("LAB_CODE"));
+                labo.setLabo_ChefVente(rs.getString("LAB_CHEFVENTE"));
+                labo.setLabo_Nom(rs.getString("LAB_NOM"));
+  
             return labo;
         } catch (SQLException ex) {
             throw new DaoException("DaoLabo - chargerUnEnregistrement : pb JDBC\n" + ex.getMessage());
         }
     } 
 
+    /**
+     * GetOne - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
+     */
     @Override
     public Labo getOne(Integer idMetier) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

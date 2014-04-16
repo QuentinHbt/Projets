@@ -47,7 +47,7 @@ public class testDao {
         System.out.println("Liste des Visiteurs");
         for (Visiteur visiteur : desVisiteurs ) {
             System.out.println(visiteur);
-            System.out.println(visiteur.getVis_DateEmbauche());
+            System.out.println(visiteur.getDateEmbauche());
         }
         return ok;
     }

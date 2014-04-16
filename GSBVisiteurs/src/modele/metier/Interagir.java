@@ -9,33 +9,33 @@ package modele.metier;
  * @author btssio
  */
 public class Interagir {
-    Medicament med_Perturbateur;
-    Medicament med_Perturbe;
+    Medicament medicament_Perturbateur;
+    Medicament medicament_Perturber;
 
-    public Interagir(Medicament med_Perturbateur, Medicament med_Perturbe) {
-        this.med_Perturbateur = med_Perturbateur;
-        this.med_Perturbe = med_Perturbe;
+    public Interagir(Medicament medicament_Perturbateur, Medicament medicament_Perturbe) {
+        this.medicament_Perturbateur = medicament_Perturbateur;
+        this.medicament_Perturber = medicament_Perturbe;
     }
 
     @Override
     public String toString() {
-        return "Interagir{" + "med_Perturbateur=" + med_Perturbateur + ", med_Perturbe=" + med_Perturbe + '}';
+        return "Interagir{" + "medicament_Perturbateur=" + medicament_Perturbateur + ", medicament_Perturbe=" + medicament_Perturber + '}';
     }
 
-    public Medicament getMed_Perturbateur() {
-        return med_Perturbateur;
+    public Medicament getMedicament_Perturbateur() {
+        return medicament_Perturbateur;
     }
 
-    public void setMed_Perturbateur(Medicament med_Perturbateur) {
-        this.med_Perturbateur = med_Perturbateur;
+    public void setMedicament_Perturbateur(Medicament medicament_Perturbateur) {
+        this.medicament_Perturbateur = medicament_Perturbateur;
     }
 
-    public Medicament getMed_Perturbe() {
-        return med_Perturbe;
+    public Medicament getMedicament_Perturber() {
+        return medicament_Perturber;
     }
 
-    public void setMed_Perturbe(Medicament med_Perturbe) {
-        this.med_Perturbe = med_Perturbe;
+    public void setMedicament_Perturber(Medicament medicament_Perturber) {
+        this.medicament_Perturber = medicament_Perturber;
     }
     
     

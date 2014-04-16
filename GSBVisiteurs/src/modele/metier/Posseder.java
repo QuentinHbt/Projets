@@ -11,19 +11,19 @@ package modele.metier;
 public class Posseder {
     Praticien practicien;
     Specialiste specialite;
-    String pos_Diplome;
-    Float pos_CoefPrescription;
+    String posseder_Diplome;
+    Float posseder_CoefPrescription;
 
-    public Posseder(Praticien practicien, Specialiste specialite, String pos_Diplome, Float pos_CoefPrescription) {
+    public Posseder(Praticien practicien, Specialiste specialite, String posseder_Diplome, Float posseder_CoefPrescription) {
         this.practicien = practicien;
         this.specialite = specialite;
-        this.pos_Diplome = pos_Diplome;
-        this.pos_CoefPrescription = pos_CoefPrescription;
+        this.posseder_Diplome = posseder_Diplome;
+        this.posseder_CoefPrescription = posseder_CoefPrescription;
     }
 
     @Override
     public String toString() {
-        return "Posseder{" + "practicien=" + practicien + ", specialite=" + specialite + ", pos_Diplome=" + pos_Diplome + ", pos_CoefPrescription=" + pos_CoefPrescription + '}';
+        return "Posseder{" + "practicien=" + practicien + ", specialite=" + specialite + ", Diplome=" + posseder_Diplome + ", CoefPrescription=" + posseder_CoefPrescription + '}';
     }
 
     public Praticien getPracticien() {
@@ -42,20 +42,20 @@ public class Posseder {
         this.specialite = specialite;
     }
 
-    public String getPos_Diplome() {
-        return pos_Diplome;
+    public String getPosseder_Diplome() {
+        return posseder_Diplome;
     }
 
-    public void setPos_Diplome(String pos_Diplome) {
-        this.pos_Diplome = pos_Diplome;
+    public void setPosseder_Diplome(String posseder_Diplome) {
+        this.posseder_Diplome = posseder_Diplome;
     }
 
-    public Float getPos_CoefPrescription() {
-        return pos_CoefPrescription;
+    public Float getPosseder_CoefPrescription() {
+        return posseder_CoefPrescription;
     }
 
-    public void setPos_CoefPrescription(Float pos_CoefPrescription) {
-        this.pos_CoefPrescription = pos_CoefPrescription;
+    public void setPosseder_CoefPrescription(Float posseder_CoefPrescription) {
+        this.posseder_CoefPrescription = posseder_CoefPrescription;
     }
     
     

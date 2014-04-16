@@ -1,7 +1,7 @@
-package ctrl;
+package controleur;
 
 import javax.swing.JOptionPane;
-import vue.V_Menu;
+import vue.VueMenu;
 
 /**
  * Contrôleur de la fenêtre VueMenu
@@ -9,11 +9,11 @@ import vue.V_Menu;
  * @version 1 20 novembre 2013
  */
 
-public class C_Menu extends C_Abstrait {
+public class CtrlMenu extends CtrlAbstrait {
 
-    public C_Menu(C_Principal ctrlPrincipal) {
+    public CtrlMenu(CtrlPrincipal ctrlPrincipal) {
         super(ctrlPrincipal);
-        vue = new V_Menu(this);
+        vue = new VueMenu(this);
     }
 
     /**
@@ -22,7 +22,7 @@ public class C_Menu extends C_Abstrait {
      */
     public void fichierQuitter() {
         // Confirmer avant de quitter
-        int rep = JOptionPane.showConfirmDialog(getVue(), "Quitter l'application\nEtes-vous sûr(e) ?", "Ambulances", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int rep = JOptionPane.showConfirmDialog(getVue(), "Quitter l'application\nEtes-vous sûr(e) ?", "GSB", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (rep == JOptionPane.YES_OPTION) {
             // mettre fin à l'application
             this.getCtrlPrincipal().action(EnumAction.MENU_FICHIER_QUITTER);
@@ -47,7 +47,7 @@ public class C_Menu extends C_Abstrait {
     }
 
     @Override
-    public V_Menu getVue() {
-        return (V_Menu) vue;
+    public VueMenu getVue() {
+        return (VueMenu) vue;
     }
 }

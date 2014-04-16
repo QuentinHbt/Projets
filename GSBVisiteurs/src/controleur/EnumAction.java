@@ -1,4 +1,4 @@
-package ctrl;
+package controleur;
 
 /**
  * Liste des actions prises en charge par le contrôleur frontal

@@ -9,43 +9,43 @@ package modele.metier;
  * @author btssio
  */
 public class Medicament {
-    String med_DepotLegal;
-    String med_NomCommercial;
+    String medicament_DepotLegal;
+    String medicament_NomCommercial;
     Famille famille;
-    String med_Composition;
-    String med_Effets;
-    String med_ContreIndic;
-    Float med_PricEchantillon;
+    String medicament_Composition;
+    String medicament_Effets;
+    String medicament_ContreIndic;
+    Float medicament_PricEchantillon;
 
-    public Medicament(String med_DepotLegal, String med_NomCommercial, Famille famille, String med_Composition, String med_Effets, String med_ContreIndic, Float med_PricEchantillon) {
-        this.med_DepotLegal = med_DepotLegal;
-        this.med_NomCommercial = med_NomCommercial;
+    public Medicament(String medicament_DepotLegal, String medicament_NomCommercial, Famille famille, String medicament_Composition, String medicament_Effets, String medicament_ContreIndic, Float medicament_PricEchantillon) {
+        this.medicament_DepotLegal = medicament_DepotLegal;
+        this.medicament_NomCommercial = medicament_NomCommercial;
         this.famille = famille;
-        this.med_Composition = med_Composition;
-        this.med_Effets = med_Effets;
-        this.med_ContreIndic = med_ContreIndic;
-        this.med_PricEchantillon = med_PricEchantillon;
+        this.medicament_Composition = medicament_Composition;
+        this.medicament_Effets = medicament_Effets;
+        this.medicament_ContreIndic = medicament_ContreIndic;
+        this.medicament_PricEchantillon = medicament_PricEchantillon;
     }
 
     @Override
     public String toString() {
-        return med_NomCommercial;
+        return medicament_NomCommercial;
     }
 
-    public String getMed_DepotLegal() {
-        return med_DepotLegal;
+    public String getMedicament_DepotLegal() {
+        return medicament_DepotLegal;
     }
 
-    public void setMed_DepotLegal(String med_DepotLegal) {
-        this.med_DepotLegal = med_DepotLegal;
+    public void setMedicament_DepotLegal(String medicament_DepotLegal) {
+        this.medicament_DepotLegal = medicament_DepotLegal;
     }
 
-    public String getMed_NomCommercial() {
-        return med_NomCommercial;
+    public String getMedicament_NomCommercial() {
+        return medicament_NomCommercial;
     }
 
-    public void setMed_NomCommercial(String med_NomCommercial) {
-        this.med_NomCommercial = med_NomCommercial;
+    public void setMedicament_NomCommercial(String medicament_NomCommercial) {
+        this.medicament_NomCommercial = medicament_NomCommercial;
     }
 
     public Famille getFamille() {
@@ -56,40 +56,37 @@ public class Medicament {
         this.famille = famille;
     }
 
-    public String getMed_Composition() {
-        return med_Composition;
+    public String getMedicament_Composition() {
+        return medicament_Composition;
     }
 
-    public void setMed_Composition(String med_Composition) {
-        this.med_Composition = med_Composition;
+    public void setMedicament_Composition(String medicament_Composition) {
+        this.medicament_Composition = medicament_Composition;
     }
 
-    public String getMed_Effets() {
-        return med_Effets;
+    public String getMedicament_Effets() {
+        return medicament_Effets;
     }
 
-    public void setMed_Effets(String med_Effets) {
-        this.med_Effets = med_Effets;
+    public void setMedicament_Effets(String medicament_Effets) {
+        this.medicament_Effets = medicament_Effets;
     }
 
-    public String getMed_ContreIndic() {
-        return med_ContreIndic;
+    public String getMedicament_ContreIndic() {
+        return medicament_ContreIndic;
     }
 
-    public void setMed_ContreIndic(String med_ContreIndic) {
-        this.med_ContreIndic = med_ContreIndic;
+    public void setMedicament_ContreIndic(String medicament_ContreIndic) {
+        this.medicament_ContreIndic = medicament_ContreIndic;
     }
 
-    public Float getMed_PricEchantillon() {
-        return med_PricEchantillon;
+    public Float getMedicament_PricEchantillon() {
+        return medicament_PricEchantillon;
     }
 
-    public void setMed_PricEchantillon(Float med_PricEchantillon) {
-        this.med_PricEchantillon = med_PricEchantillon;
+    public void setMedicament_PricEchantillon(Float medicament_PricEchantillon) {
+        this.medicament_PricEchantillon = medicament_PricEchantillon;
     }
-    
-    
-    
-    
+   
     
 }

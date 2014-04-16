@@ -9,43 +9,43 @@ package modele.metier;
  * @author btssio
  */
 public class Labo {
-    String lab_Code;
-    String lab_Nom;
-    String lab_ChefVente;
+    String labo_Code;
+    String labo_Nom;
+    String labo_ChefVente;
 
-    public Labo(String lab_Code, String lab_Nom, String lab_ChefVente) {
-        this.lab_Code = lab_Code;
-        this.lab_Nom = lab_Nom;
-        this.lab_ChefVente = lab_ChefVente;
+    public Labo(String labo_Code, String labo_Nom, String labo_ChefVente) {
+        this.labo_Code = labo_Code;
+        this.labo_Nom = labo_Nom;
+        this.labo_ChefVente = labo_ChefVente;
     }
 
     @Override
     public String toString() {
-        return lab_Code + " " + lab_Nom;
+        return "Labo{" + "code=" +labo_Code + ", nom=" + labo_Nom + ", chefVente=" + labo_Nom;
     }
 
-    public String getLab_Code() {
-        return lab_Code;
+    public String getLabo_Code() {
+        return labo_Code;
     }
 
-    public void setLab_Code(String lab_Code) {
-        this.lab_Code = lab_Code;
+    public void setLabo_Code(String labo_Code) {
+        this.labo_Code = labo_Code;
     }
 
-    public String getLab_Nom() {
-        return lab_Nom;
+    public String getLabo_Nom() {
+        return labo_Nom;
     }
 
-    public void setLab_Nom(String lab_Nom) {
-        this.lab_Nom = lab_Nom;
+    public void setLabo_Nom(String labo_Nom) {
+        this.labo_Nom = labo_Nom;
     }
 
-    public String getLab_ChefVente() {
-        return lab_ChefVente;
+    public String getLabo_ChefVente() {
+        return labo_ChefVente;
     }
 
-    public void setLab_ChefVente(String lab_ChefVente) {
-        this.lab_ChefVente = lab_ChefVente;
+    public void setLabo_ChefVente(String labo_ChefVente) {
+        this.labo_ChefVente = labo_ChefVente;
     }
     
     

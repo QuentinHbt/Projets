@@ -12,18 +12,18 @@ public class Offrir {
     Visiteur visiteur;
     Rapport_Visite rapport_visite;
     Medicament medicament;
-    int off_Qte;
+    int offrir_Qte;
 
-    public Offrir(Visiteur visiteur, Rapport_Visite rapport_visite, Medicament medicament, int off_Qte) {
+    public Offrir(Visiteur visiteur, Rapport_Visite rapport_visite, Medicament medicament, int offrir_Qte) {
         this.visiteur = visiteur;
         this.rapport_visite = rapport_visite;
         this.medicament = medicament;
-        this.off_Qte = off_Qte;
+        this.offrir_Qte = offrir_Qte;
     }
 
     @Override
     public String toString() {
-        return "Offrir{" + "visiteur=" + visiteur + ", rapport_visite=" + rapport_visite + ", medicament=" + medicament + ", off_Qte=" + off_Qte + '}';
+        return "Offrir{" + "visiteur=" + visiteur + ", rapport_visite=" + rapport_visite + ", medicament=" + medicament + ", Qte=" + offrir_Qte + '}';
     }
 
     public Visiteur getVisiteur() {
@@ -50,13 +50,12 @@ public class Offrir {
         this.medicament = medicament;
     }
 
-    public int getOff_Qte() {
-        return off_Qte;
+    public int getOffrir_Qte() {
+        return offrir_Qte;
     }
 
-    public void setOff_Qte(int off_Qte) {
-        this.off_Qte = off_Qte;
+    public void setOffrir_Qte(int offrir_Qte) {
+        this.offrir_Qte = offrir_Qte;
     }
-    
-    
+       
 }

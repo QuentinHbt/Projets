@@ -12,12 +12,12 @@ import javax.swing.JSpinner;
  *
  * @author btssio
  */
-public class V_AjoutEch extends javax.swing.JPanel {
+public class VueAjoutEch extends javax.swing.JPanel {
    DefaultComboBoxModel mcbMedicament;
     /**
      * Creates new form V_AjoutEch
      */
-    public V_AjoutEch() {
+    public VueAjoutEch() {
         initComponents();
         mcbMedicament = new DefaultComboBoxModel();
         cbMedicament.setModel(mcbMedicament);

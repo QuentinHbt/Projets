@@ -11,103 +11,103 @@ import java.util.Date;
  * @author btssio
  */
 public class Visiteur {
-    String vis_Matricule;
-    String vis_Nom;
-    String vis_Prenom;
-    String vis_Adresse;
-    String vis_Cp;
-    String vis_Ville;
-    Date vis_DateEmbauche;
+    String matricule;
+    String nom;
+    String prenom;
+    String adresse;
+    String cp;
+    String ville;
+    Date dateEmbauche;
     Labo labo;
     Secteur secteur;
 
-    public Visiteur(String vis_Matricule, String vis_Nom, String vis_Prenom, String vis_Adresse, String vis_Cp, String vis_Ville, Date vis_DateEmbauche, Labo labo, Secteur secteur) {
-        this.vis_Matricule = vis_Matricule;
-        this.vis_Nom = vis_Nom;
-        this.vis_Prenom = vis_Prenom;
-        this.vis_Adresse = vis_Adresse;
-        this.vis_Cp = vis_Cp;
-        this.vis_Ville = vis_Ville;
-        this.vis_DateEmbauche = vis_DateEmbauche;
-        this.labo = labo;
-        this.secteur = secteur;
+    public Visiteur(String Matricule, String Nom, String Prenom, String Adresse, String Cp, String Ville, Date DateEmbauche, Labo Labo, Secteur Secteur) {
+        this.matricule = Matricule;
+        this.nom = Nom;
+        this.prenom = Prenom;
+        this.adresse = Adresse;
+        this.cp = Cp;
+        this.ville = Ville;
+        this.dateEmbauche = DateEmbauche;
+        this.labo = Labo;
+        this.secteur = Secteur;
     }
 
     @Override
     public String toString() {
-        return vis_Matricule +" "+ vis_Nom +" "+ vis_Prenom;
+        return matricule +" "+ nom +" "+ prenom;
     }
 
-    public String getVis_Matricule() {
-        return vis_Matricule;
+    public String getMatricule() {
+        return matricule;
     }
 
-    public void setVis_Matricule(String vis_Matricule) {
-        this.vis_Matricule = vis_Matricule;
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
     }
 
-    public String getVis_Nom() {
-        return vis_Nom;
+    public String getNom() {
+        return nom;
     }
 
-    public void setVis_Nom(String vis_Nom) {
-        this.vis_Nom = vis_Nom;
+    public void setNom(String Nom) {
+        this.nom = Nom;
     }
 
-    public String getVis_Prenom() {
-        return vis_Prenom;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setVis_Prenom(String vis_Prenom) {
-        this.vis_Prenom = vis_Prenom;
+    public void setPrenom(String Prenom) {
+        this.prenom = Prenom;
     }
 
-    public String getVis_Adresse() {
-        return vis_Adresse;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setVis_Adresse(String vis_Adresse) {
-        this.vis_Adresse = vis_Adresse;
+    public void setAdresse(String Adresse) {
+        this.adresse = Adresse;
     }
 
-    public String getVis_Cp() {
-        return vis_Cp;
+    public String getCp() {
+        return cp;
     }
 
-    public void setVis_Cp(String vis_Cp) {
-        this.vis_Cp = vis_Cp;
+    public void setCp(String Cp) {
+        this.cp = Cp;
     }
 
-    public String getVis_Ville() {
-        return vis_Ville;
+    public String getVille() {
+        return ville;
     }
 
-    public void setVis_Ville(String vis_Ville) {
-        this.vis_Ville = vis_Ville;
+    public void setVille(String Ville) {
+        this.ville = Ville;
     }
 
-    public Date getVis_DateEmbauche() {
-        return vis_DateEmbauche;
+    public Date getDateEmbauche() {
+        return dateEmbauche;
     }
 
-    public void setVis_DateEmbauche(Date vis_DateEmbauche) {
-        this.vis_DateEmbauche = vis_DateEmbauche;
+    public void setDateEmbauche(Date DateEmbauche) {
+        this.dateEmbauche = DateEmbauche;
     }
 
     public Labo getLabo() {
         return labo;
     }
 
-    public void setLabo(Labo labo) {
-        this.labo = labo;
+    public void setLabo(Labo Labo) {
+        this.labo = Labo;
     }
 
     public Secteur getSecteur() {
         return secteur;
     }
 
-    public void setSecteur(Secteur secteur) {
-        this.secteur = secteur;
+    public void setSecteur(Secteur Secteur) {
+        this.secteur = Secteur;
     }
     
     

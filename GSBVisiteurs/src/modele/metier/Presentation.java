@@ -9,33 +9,33 @@ package modele.metier;
  * @author btssio
  */
 public class Presentation {
-    String pre_Code;
-    String pre_Libelle;
+    String presentation_Code;
+    String presentation_Libelle;
 
-    public Presentation(String pre_Code, String pre_Libelle) {
-        this.pre_Code = pre_Code;
-        this.pre_Libelle = pre_Libelle;
+    public Presentation(String Presentation_Code, String Presentation_Libelle) {
+        this.presentation_Code = Presentation_Code;
+        this.presentation_Libelle = Presentation_Libelle;
     }
 
     @Override
     public String toString() {
-        return "Presentation{" + "pre_Code=" + pre_Code + ", pre_Libelle=" + pre_Libelle + '}';
+        return "Presentation{" + "Code=" + presentation_Code + ", Libelle=" + presentation_Libelle + '}';
     }
 
-    public String getPre_Code() {
-        return pre_Code;
+    public String getPresentation_Code() {
+        return presentation_Code;
     }
 
-    public void setPre_Code(String pre_Code) {
-        this.pre_Code = pre_Code;
+    public void setPresentation_Code(String Presentation_Code) {
+        this.presentation_Code = Presentation_Code;
     }
 
-    public String getPre_Libelle() {
-        return pre_Libelle;
+    public String getPresentation_Libelle() {
+        return presentation_Libelle;
     }
 
-    public void setPre_Libelle(String pre_Libelle) {
-        this.pre_Libelle = pre_Libelle;
+    public void setPresentation_Libelle(String Presentation_Libelle) {
+        this.presentation_Libelle = Presentation_Libelle;
     }
     
     

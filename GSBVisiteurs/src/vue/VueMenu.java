@@ -6,19 +6,19 @@ package vue;
 
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
-import ctrl.C_Abstrait;
-import ctrl.C_Menu;
-import ctrl.EnumAction;
+import controleur.CtrlAbstrait;
+import controleur.CtrlMenu;
+import controleur.EnumAction;
 /**
  *
  * @author btssio
  */
-public class V_Menu extends V_Abstraite {
+public class VueMenu extends VueAbstraite {
 
     /**
      * Creates new form V_Connexion
      */
-    public V_Menu(C_Abstrait ctrlAbstrait) {
+    public VueMenu(CtrlAbstrait ctrlAbstrait) {
         super(ctrlAbstrait);
         initComponents();
     }
@@ -128,24 +128,24 @@ public class V_Menu extends V_Abstraite {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMedicamentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicamentActionPerformed
-       ((C_Menu)controleur).medicament();
+       ((CtrlMenu)controleur).medicament();
           
     }//GEN-LAST:event_btnMedicamentActionPerformed
 
     private void btnPraticienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPraticienActionPerformed
-       ((C_Menu)controleur).praticien();
+       ((CtrlMenu)controleur).praticien();
     }//GEN-LAST:event_btnPraticienActionPerformed
 
     private void btnQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitterActionPerformed
-         ((C_Menu)controleur).fichierQuitter();
+         ((CtrlMenu)controleur).fichierQuitter();
     }//GEN-LAST:event_btnQuitterActionPerformed
 
     private void btnVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisiteurActionPerformed
-         ((C_Menu)controleur).visiteur();
+         ((CtrlMenu)controleur).visiteur();
     }//GEN-LAST:event_btnVisiteurActionPerformed
 
     private void btnRapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRapportActionPerformed
-         ((C_Menu)controleur).rapport();
+         ((CtrlMenu)controleur).rapport();
     }//GEN-LAST:event_btnRapportActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

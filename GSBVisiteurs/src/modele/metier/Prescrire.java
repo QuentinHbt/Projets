@@ -12,18 +12,18 @@ public class Prescrire {
     Medicament medicament;
     Type_Individu type_Individu;
     Dosage dosage;
-    String pre_Posologie;
+    String prescrire_Posologie;
 
-    public Prescrire(Medicament medicament, Type_Individu type_Individu, Dosage dosage, String pre_Posologie) {
+    public Prescrire(Medicament medicament, Type_Individu type_Individu, Dosage dosage, String prescription_Posologie) {
         this.medicament = medicament;
         this.type_Individu = type_Individu;
         this.dosage = dosage;
-        this.pre_Posologie = pre_Posologie;
+        this.prescrire_Posologie = prescription_Posologie;
     }
 
     @Override
     public String toString() {
-        return "Prescrire{" + "medicament=" + medicament + ", type_Individu=" + type_Individu + ", dosage=" + dosage + ", pre_Posologie=" + pre_Posologie + '}';
+        return "Prescrire{" + "medicament=" + medicament + ", type_Individu=" + type_Individu + ", dosage=" + dosage + ", Posologie=" + prescrire_Posologie + '}';
     }
 
     public Medicament getMedicament() {
@@ -50,12 +50,12 @@ public class Prescrire {
         this.dosage = dosage;
     }
 
-    public String getPre_Posologie() {
-        return pre_Posologie;
+    public String getPrescrire_Posologie() {
+        return prescrire_Posologie;
     }
 
-    public void setPre_Posologie(String pre_Posologie) {
-        this.pre_Posologie = pre_Posologie;
+    public void setPrescrire_Posologie(String prescrire_Posologie) {
+        this.prescrire_Posologie = prescrire_Posologie;
     }
     
     

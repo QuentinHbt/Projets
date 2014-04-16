@@ -6,7 +6,6 @@
 package modele.dao;
 
 import modele.metier.*;
-
 import modele.jdbc.Jdbc;
 import java.sql.*;
 import java.util.*;
@@ -17,7 +16,11 @@ import java.util.*;
 public class DaoMedicament implements DaoInterface<Medicament, Integer> {
 
     /**
-     * Non implémenté
+     * Create - non implémentée
+     * 
+     * @param unMedicament
+     * @return
+     * @throws Exception 
      */
     @Override
     public int create(Medicament unMedicament) throws Exception {
@@ -27,9 +30,9 @@ public class DaoMedicament implements DaoInterface<Medicament, Integer> {
     /**
      * Lire un enregistrement d'après son identifiant
      *
-     * @param identifiant métier de l'objet recherché
+     * @param idMedicament métier de l'objet recherché
      * @return objet métier trouvé, ou null sinon
-     * @throws Exception
+     * @throws DaoException
      */
         public Medicament getOne(String idMedicament) throws DaoException {
         Medicament result = null;
@@ -52,14 +55,14 @@ public class DaoMedicament implements DaoInterface<Medicament, Integer> {
     }
 
     /**
-     * getAll
-     *
-     * @return ArrayList de l'ensemble des occurences d'equipiers de la table
-     * EQUIPIER
+     * GetAll - Retourne la liste des médicaments d'une famille
+     * 
+     * @return
+     * @throws DaoException 
      */
     @Override
     public ArrayList<Medicament> getAll() throws DaoException {
-        ArrayList<Medicament> result = new ArrayList<Medicament>();
+        ArrayList<Medicament> result = new ArrayList<>();
         ResultSet rs;
         // préparer la requête
         String requete = "SELECT * FROM MEDICAMENT"
@@ -79,7 +82,12 @@ public class DaoMedicament implements DaoInterface<Medicament, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Update - non implémentée
+     * 
+     * @param idMetier
+     * @param objetMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int update(Integer idMetier, Medicament objetMetier) throws Exception {
@@ -87,7 +95,11 @@ public class DaoMedicament implements DaoInterface<Medicament, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Delete - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int delete(Integer idMetier) throws Exception {
@@ -98,38 +110,41 @@ public class DaoMedicament implements DaoInterface<Medicament, Integer> {
     //  Méthodes privées
     //----------------------------------------------------------------------
     /**
-     * chargerUnEnregistrementEquipier Instancie un objet equipier avec les
-     * valeurs lues dans la base de données La jointure avec la table PRESENCE
-     * n'est pas effectuée
-     *
-     * @param rs enregistrement de la table Equipier courant
-     * @return un objet Equipier, dont la liste des "présences" n'est pas
-     * renseignée
-     * @throws DaoException
+     * chargerUnEnregistrement - charge un enregistrement de médicament
+     * @param rs
+     * @return
+     * @throws DaoException 
      */
     private Medicament chargerUnEnregistrement(ResultSet rs) throws DaoException {
         try {
             Medicament medicament = new Medicament(null,null,null,null,null,null,null);
            
             
-         medicament.setMed_DepotLegal(rs.getString("MED_DEPOTLEGAL"));
-         medicament.setMed_NomCommercial(rs.getString("MED_NOMCOMMERCIAL"));
+         medicament.setMedicament_DepotLegal(rs.getString("MED_DEPOTLEGAL"));
+         medicament.setMedicament_NomCommercial(rs.getString("MED_NOMCOMMERCIAL"));
           if(rs.getString("FAM_CODE")!=null){
               Famille famille = new Famille(null,null);
-               famille.setFam_Code(rs.getString("FAM_CODE"));
-               famille.setFam_Libelle(rs.getString("FAM_LIBELLE"));
+               famille.setFamille_Code(rs.getString("FAM_CODE"));
+               famille.setFamille_Libelle(rs.getString("FAM_LIBELLE"));
                medicament.setFamille(famille);
           }
-           medicament.setMed_Composition(rs.getString("MED_COMPOSITION"));
-           medicament.setMed_Effets(rs.getString("MED_EFFETS"));
-            medicament.setMed_ContreIndic(rs.getString("MED_CONTREINDIC")); 
-           medicament.setMed_PricEchantillon(rs.getFloat("MED_PRIXECHANTILLON"));
+           medicament.setMedicament_Composition(rs.getString("MED_COMPOSITION"));
+           medicament.setMedicament_Effets(rs.getString("MED_EFFETS"));
+            medicament.setMedicament_ContreIndic(rs.getString("MED_CONTREINDIC")); 
+           medicament.setMedicament_PricEchantillon(rs.getFloat("MED_PRIXECHANTILLON"));
             return medicament;
         } catch (SQLException ex) {
             throw new DaoException("DaoMedicament - chargerUnEnregistrement : pb JDBC\n" + ex.getMessage());
         }
     } 
 
+    /**
+     * GetOne - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
+     */
     @Override
     public Medicament getOne(Integer idMetier) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -1,4 +1,4 @@
-package ctrl;
+package controleur;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,7 +32,7 @@ public class Main {
         String ficPropertiesJdbc = "gsbVisiteurJdbc.properties"; // nom du fichier de properties
         Properties propertiesJdbc;                              // objet de propriétés (paramètres de l'appplication) pour Jdbc
         FileInputStream input;                                  // flux de lecture des properties
-        C_Principal ctrlPrincipal;                                  // référence vers le contrôleur principal
+        CtrlPrincipal ctrlPrincipal;                                  // référence vers le contrôleur principal
 
         // si au moins un paramètre a été passé sur la ligne de commandes
         // le premier est le nom du fichier contenant les propriétés de connexion JDBC
@@ -69,7 +69,7 @@ public class Main {
 		}
         
         // Pour lancer l'application, instancier le contrôleur principal
-        ctrlPrincipal = new C_Principal();
+        ctrlPrincipal = new CtrlPrincipal();
         ctrlPrincipal.action();
     }
 }

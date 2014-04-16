@@ -14,12 +14,16 @@ import java.util.*;
  * Classe DAO pour la classe Visiteur
  */
 public class DaoOffrir implements DaoInterface<Offrir, Integer> {
-  private DaoVisiteur daoVisiteur = new DaoVisiteur();
+    private DaoVisiteur daoVisiteur = new DaoVisiteur();
     private DaoMedicament daoMedicament = new DaoMedicament();
-      private DaoRapport daoRapport = new DaoRapport();
+    private DaoRapport daoRapport = new DaoRapport();
     
     /**
-     * Non implémenté
+     * Create - non implémentée
+     * 
+     * @param unOffrir
+     * @return
+     * @throws Exception 
      */
     @Override
     public int create(Offrir unOffrir) throws Exception {
@@ -29,9 +33,9 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
     /**
      * Lire un enregistrement d'après son identifiant
      *
-     * @param identifiant métier de l'objet recherché
+     * @param idOffrir métier de l'objet recherché
      * @return objet métier trouvé, ou null sinon
-     * @throws Exception
+     * @throws DaoException
      */
     @Override
     public Offrir getOne(Integer idOffrir) throws DaoException {
@@ -53,10 +57,10 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
     }
 
     /**
-     * getAll
-     *
-     * @return ArrayList de l'ensemble des occurences d'equipiers de la table
-     * EQUIPIER
+     * GetAll - retourne l'ensemble des occurences de la table Offrir
+     * 
+     * @return
+     * @throws DaoException 
      */
     @Override
     public ArrayList<Offrir> getAll() throws DaoException {
@@ -78,7 +82,15 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
         return result;
     }
     
-        public ArrayList<Offrir> getRapport(int rapNum) throws DaoException {
+    /**
+     * GetRapport - retourne une liste des occurences d'Offrir selon 
+     * le numéro de Rapport
+     * 
+     * @param rapNum
+     * @return
+     * @throws DaoException 
+     */
+    public ArrayList<Offrir> getRapport(int rapNum) throws DaoException {
         ArrayList<Offrir> result = new ArrayList<Offrir>();
         ResultSet rs;
         // préparer la requête
@@ -99,7 +111,12 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Update - non implémentée
+     * 
+     * @param idMetier
+     * @param objetMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int update(Integer idMetier, Offrir objetMetier) throws Exception {
@@ -107,7 +124,11 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Delete - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int delete(Integer idMetier) throws Exception {
@@ -121,12 +142,12 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
         try {
             PreparedStatement ps = Jdbc.getInstance().getConnexion().prepareStatement(requete);
 
-            ps.setString(1, offrir.getVisiteur().getVis_Matricule());
+            ps.setString(1, offrir.getVisiteur().getMatricule());
     
-            ps.setInt(2, offrir.getRapport_visite().getRap_Num());
+            ps.setInt(2, offrir.getRapport_visite().getRapport_Num());
           
-            ps.setString(3, offrir.getMedicament().getMed_DepotLegal());
-              ps.setInt(4, offrir.getOff_Qte());
+            ps.setString(3, offrir.getMedicament().getMedicament_DepotLegal());
+              ps.setInt(4, offrir.getOffrir_Qte());
             nb = ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -139,32 +160,24 @@ public class DaoOffrir implements DaoInterface<Offrir, Integer> {
     //  Méthodes privées
     //----------------------------------------------------------------------
     /**
-     * chargerUnEnregistrementEquipier Instancie un objet equipier avec les
-     * valeurs lues dans la base de données La jointure avec la table PRESENCE
-     * n'est pas effectuée
-     *
-     * @param rs enregistrement de la table Equipier courant
-     * @return un objet Equipier, dont la liste des "présences" n'est pas
-     * renseignée
-     * @throws DaoException
+     * chargerUnEnregistrement - permer de charger un objet offrir
+     * 
+     * @param rs
+     * @return
+     * @throws DaoException 
      */
-    
     private Offrir chargerUnEnregistrement(ResultSet rs) throws DaoException {
         try {
             Offrir offrir = new Offrir(null,null,null,0);
             offrir.setMedicament(daoMedicament.getOne(rs.getString("MED_DEPOTLEGAL")));
             offrir.setRapport_visite(daoRapport.getOne(rs.getInt("RAP_NUM")));
             offrir.setVisiteur(daoVisiteur.getOne(rs.getString("VIS_MATRICULE")));
-            offrir.setOff_Qte(rs.getInt("OFF_QTE"));
+            offrir.setOffrir_Qte(rs.getInt("OFF_QTE"));
   
-            
-          
             return offrir;
         } catch (SQLException ex) {
             throw new DaoException("DaoOffrir - chargerUnEnregistrement : pb JDBC\n" + ex.getMessage());
         }
     } 
 
- 
-    
 }

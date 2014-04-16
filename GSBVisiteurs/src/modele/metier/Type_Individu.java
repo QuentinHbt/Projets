@@ -9,33 +9,33 @@ package modele.metier;
  * @author btssio
  */
 public class Type_Individu {
-    String tin_Code;
-    String tin_Libelle;
+    String code;
+    String libelle;
 
-    public Type_Individu(String tin_Code, String tin_Libelle) {
-        this.tin_Code = tin_Code;
-        this.tin_Libelle = tin_Libelle;
+    public Type_Individu(String Code, String Libelle) {
+        this.code = Code;
+        this.libelle = Libelle;
     }
 
     @Override
     public String toString() {
-        return "Type_Individu{" + "tin_Code=" + tin_Code + ", tin_Libelle=" + tin_Libelle + '}';
+        return "Type_Individu{" + "Code=" + code + ", Libelle=" + libelle + '}';
     }
 
-    public String getTin_Code() {
-        return tin_Code;
+    public String getCode() {
+        return code;
     }
 
-    public void setTin_Code(String tin_Code) {
-        this.tin_Code = tin_Code;
+    public void setCode(String Code) {
+        this.code = Code;
     }
 
-    public String getTin_Libelle() {
-        return tin_Libelle;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setTin_Libelle(String tin_Libelle) {
-        this.tin_Libelle = tin_Libelle;
+    public void setLibelle(String Libelle) {
+        this.libelle = Libelle;
     }
     
     

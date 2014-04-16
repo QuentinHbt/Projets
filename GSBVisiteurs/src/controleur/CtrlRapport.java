@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ctrl;
+package controleur;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,10 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import modele.dao.*;
 import modele.metier.*;
-import vue.V_Abstraite;
-import vue.V_AjoutEch;
-import vue.V_RapportDeVisite;
-import vue.V_Visiteur;
+import vue.VueAbstraite;
+import vue.VueAjoutEch;
+import vue.VueRapportVisite;
+import vue.VueVisiteur;
 
 /**
  * Contrôleur de la fenêtre VuePresence
@@ -27,7 +27,7 @@ import vue.V_Visiteur;
  * @author nbourgeois
  * @version 1 20 novembre 2013
  */
-public class C_Rapport extends C_Abstrait {
+public class CtrlRapport extends CtrlAbstrait {
 
     private DaoRapport daoRapport = new DaoRapport();
     private DaoPraticien daoPraticien = new DaoPraticien();
@@ -37,10 +37,10 @@ public class C_Rapport extends C_Abstrait {
     private SimpleDateFormat formatFr = new SimpleDateFormat("dd/MM/yyyy");
 
 
-    //private V_Abstraite vueAjoutEch = new  V_AjoutEch(this);
-    public C_Rapport(C_Principal ctrlPrincipal) {
+    //private VueAbstraite vueAjoutEch = new  VueAjoutEch(this);
+    public CtrlRapport(CtrlPrincipal ctrlPrincipal) {
         super(ctrlPrincipal);
-        vue = new V_RapportDeVisite(this);
+        vue = new VueRapportVisite(this);
         actualiser();
     }
 
@@ -67,10 +67,10 @@ public class C_Rapport extends C_Abstrait {
         try {
             lesMedicaments = daoMedicament.getAll();
         } catch (DaoException ex) {
-            Logger.getLogger(C_Rapport.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CtrlRapport.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        V_AjoutEch vueAjoutEch = new V_AjoutEch();
+        VueAjoutEch vueAjoutEch = new VueAjoutEch();
         vueAjoutEch.getMcbMedicament().removeAllElements();
         for (Medicament unMedicament : lesMedicaments) {
             vueAjoutEch.getMcbMedicament().addElement(unMedicament);
@@ -111,7 +111,7 @@ public class C_Rapport extends C_Abstrait {
         getVue().getMtEchantillon().setRowCount(0);
     }
 
-    public final void ajouter()  {
+    public final void ajouter()   {
             String msg = "ajout du rapport réussi"; // message à afficher à l'issue de la mise à jour
         int typeMsg = JOptionPane.INFORMATION_MESSAGE;
                   
@@ -131,11 +131,11 @@ public class C_Rapport extends C_Abstrait {
  
         //Ajout du rapport
         try {
-            daoRapport.ajouter(unRapport);
-            cle = daoRapport.getCleMax();
+            cle = daoRapport.create(unRapport);
+           // cle = daoRapport.getCleMax();
 
         if (cle>0){
-        unRapport.setRap_Num(cle);
+        unRapport.setRapport_Num(cle);
         
         
         //Ajout des echantillons
@@ -160,7 +160,9 @@ public class C_Rapport extends C_Abstrait {
                 } catch (DaoException ex) {
                      msg = "erreur à l'ajout du rapport";
                 typeMsg = JOptionPane.ERROR_MESSAGE;
-        }
+        }       catch (Exception ex) {
+                    Logger.getLogger(CtrlRapport.class.getName()).log(Level.SEVERE, null, ex);
+                }
               } catch (ParseException ex) {
              msg = "impossible de convertir la date";
                 typeMsg = JOptionPane.ERROR_MESSAGE;
@@ -183,17 +185,17 @@ public class C_Rapport extends C_Abstrait {
             msg = "Saisie incomplète";
             typeMsg = JOptionPane.WARNING_MESSAGE;
         } else {
-            getVue().getTxtBilan().setText(rapportSelect.getRap_Bilan());
-            if(rapportSelect.getRap_Date()!=null){
-            getVue().getTxtDateRapport().setText(formatFr.format(rapportSelect.getRap_Date()));
+            getVue().getTxtBilan().setText(rapportSelect.getRapport_Bilan());
+            if(rapportSelect.getRapport_Date()!=null){
+            getVue().getTxtDateRapport().setText(formatFr.format(rapportSelect.getRapport_Date()));
             }
-            getVue().getTxtMotifVisite().setText(rapportSelect.getRap_Motif());
+            getVue().getTxtMotifVisite().setText(rapportSelect.getRapport_Motif());
             getVue().getMcbPraticien().setSelectedItem(rapportSelect.getPracticien());
             getVue().getMcbVisiteur().setSelectedItem(rapportSelect.getVisiteur());
             try {
-                chargerListeEchantillon(rapportSelect.getRap_Num());
+                chargerListeEchantillon(rapportSelect.getRapport_Num());
             } catch (DaoException ex) {
-                Logger.getLogger(C_Rapport.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CtrlRapport.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -278,7 +280,7 @@ public class C_Rapport extends C_Abstrait {
 
         //   int i =0;
         for (Offrir unEchantillon : lesEchantillons) {
-            getVue().getMtEchantillon().addRow(new String[]{unEchantillon.getMedicament().getMed_NomCommercial(), Integer.toString(unEchantillon.getOff_Qte())});
+            getVue().getMtEchantillon().addRow(new String[]{unEchantillon.getMedicament().getMedicament_NomCommercial(), Integer.toString(unEchantillon.getOffrir_Qte())});
             //    getVue().getMtEchantillon().setRowCount(i+2);
             //     getVue().getTbEchantillons().setValueAt(unEchantillon.getMedicament().getMed_NomCommercial(), i, 0);
             //      getVue().getTbEchantillons().setValueAt(unEchantillon.getOff_Qte(), i, 1);
@@ -287,7 +289,7 @@ public class C_Rapport extends C_Abstrait {
     }
 
     @Override
-    public V_RapportDeVisite getVue() {
-        return (V_RapportDeVisite) vue;
+    public VueRapportVisite getVue() {
+        return (VueRapportVisite) vue;
     }
 }

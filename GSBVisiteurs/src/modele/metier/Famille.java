@@ -9,33 +9,33 @@ package modele.metier;
  * @author btssio
  */
 public class Famille {
-    String fam_Code;
-    String fam_Libelle;
+    String famille_Code;
+    String famille_Libelle;
 
-    public Famille(String fam_Code, String fam_Libelle) {
-        this.fam_Code = fam_Code;
-        this.fam_Libelle = fam_Libelle;
+    public Famille(String famille_Code, String famille_Libelle) {
+        this.famille_Code = famille_Code;
+        this.famille_Libelle = famille_Libelle;
     }
 
     @Override
     public String toString() {
-        return "Famille{" + "fam_Code=" + fam_Code + ", fam_Libelle=" + fam_Libelle + '}';
+        return "Famille{" + "Code=" + famille_Code + ", Libelle=" + famille_Libelle + '}';
     }
 
-    public String getFam_Code() {
-        return fam_Code;
+    public String getFamille_Code() {
+        return famille_Code;
     }
 
-    public void setFam_Code(String fam_Code) {
-        this.fam_Code = fam_Code;
+    public void setFamille_Code(String famille_Code) {
+        this.famille_Code = famille_Code;
     }
 
-    public String getFam_Libelle() {
-        return fam_Libelle;
+    public String getFamille_Libelle() {
+        return famille_Libelle;
     }
 
-    public void setFam_Libelle(String fam_Libelle) {
-        this.fam_Libelle = fam_Libelle;
+    public void setFamille_Libelle(String famille_Libelle) {
+        this.famille_Libelle = famille_Libelle;
     }
     
     

@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ctrl;
+package controleur;
 
 
-import static ctrl.EnumAction.*;
+import static controleur.EnumAction.*;
 import javax.swing.JOptionPane;
 import modele.jdbc.Jdbc;
 import vue.Fenetre;
@@ -15,16 +15,16 @@ import vue.Fenetre;
  *
  * @author btssio
  */
-public class C_Principal {
+public class CtrlPrincipal {
     
 
     private Fenetre fenetre =  new Fenetre();
-    private C_Medicament ctrlMedicament = null;
-    private C_Praticien ctrlPraticien = null;
-    private C_Visiteur ctrlVisiteur = null;
-    private C_Menu ctrlMenu = null;
-    private C_Connexion ctrlConnexion = null;
-    private C_Rapport ctrlRapport = null;
+    private CtrlMedicament ctrlMedicament = null;
+    private CtrlPraticien ctrlPraticien = null;
+    private CtrlVisiteur ctrlVisiteur = null;
+    private CtrlMenu ctrlMenu = null;
+    private CtrlConnexion ctrlConnexion = null;
+    private CtrlRapport ctrlRapport = null;
     
 
     /**
@@ -32,7 +32,7 @@ public class C_Principal {
      */
     public void action() {
         if (ctrlConnexion == null) {
-            ctrlConnexion = new C_Connexion(this);
+            ctrlConnexion = new CtrlConnexion(this);
         }
         fenetre.setEnabled(true);
         fenetre.setContentPane(ctrlConnexion.getVue());
@@ -94,7 +94,7 @@ public class C_Principal {
      */
     private void menuMedicament() {
         if (ctrlMedicament == null) {
-            ctrlMedicament = new C_Medicament(this);
+            ctrlMedicament = new CtrlMedicament(this);
         } else {
             // si la le contrôleur et sa vue existent déjà
             // il faut rafraîchir le contenu à partir de la base de données
@@ -112,7 +112,7 @@ public class C_Principal {
      */
     private void medicamentQuitter() {
         if (ctrlMenu == null) {
-            ctrlMenu = new C_Menu(this);
+            ctrlMenu = new CtrlMenu(this);
         }
         fenetre.setVisible(false);
         fenetre.setContentPane(ctrlMenu.getVue());
@@ -120,7 +120,7 @@ public class C_Principal {
     }
     private void menuPraticien() {
         if (ctrlPraticien == null) {
-            ctrlPraticien = new C_Praticien(this);
+            ctrlPraticien = new CtrlPraticien(this);
         } else {
             // si la le contrôleur et sa vue existent déjà
             // il faut rafraîchir le contenu à partir de la base de données
@@ -138,7 +138,7 @@ public class C_Principal {
      */
     private void PraticienQuitter() {
         if (ctrlMenu == null) {
-            ctrlMenu = new C_Menu(this);
+            ctrlMenu = new CtrlMenu(this);
         }
         fenetre.setVisible(false);
         fenetre.setContentPane(ctrlMenu.getVue());
@@ -146,7 +146,7 @@ public class C_Principal {
     }
      private void menuVisiteur() {
         if (ctrlVisiteur == null) {
-            ctrlVisiteur = new C_Visiteur(this);
+            ctrlVisiteur = new CtrlVisiteur(this);
         } else {
             // si la le contrôleur et sa vue existent déjà
             // il faut rafraîchir le contenu à partir de la base de données
@@ -164,7 +164,7 @@ public class C_Principal {
      */
     private void visiteurQuitter() {
         if (ctrlMenu == null) {
-            ctrlMenu = new C_Menu(this);
+            ctrlMenu = new CtrlMenu(this);
         }
         fenetre.setVisible(false);
         fenetre.setContentPane(ctrlMenu.getVue());
@@ -172,7 +172,7 @@ public class C_Principal {
     }
         private void connexionQuitter() {
         if (ctrlMenu == null) {
-            ctrlMenu = new C_Menu(this);
+            ctrlMenu = new CtrlMenu(this);
         }
         fenetre.setVisible(false);
         fenetre.setContentPane(ctrlMenu.getVue());
@@ -180,7 +180,7 @@ public class C_Principal {
     }
         private void menuRapport() {
         if (ctrlRapport == null) {
-            ctrlRapport = new C_Rapport(this);
+            ctrlRapport = new CtrlRapport(this);
         } else {
             // si la le contrôleur et sa vue existent déjà
             // il faut rafraîchir le contenu à partir de la base de données
@@ -198,7 +198,7 @@ public class C_Principal {
      */
     private void rapportQuitter() {
         if (ctrlMenu == null) {
-            ctrlMenu = new C_Menu(this);
+            ctrlMenu = new CtrlMenu(this);
         }
         fenetre.setVisible(false);
         fenetre.setContentPane(ctrlMenu.getVue());

@@ -3,14 +3,14 @@
  * and open the template in the editor.
  */
 
-package ctrl;
+package controleur;
 
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import modele.dao.*;
 import modele.metier.*;
-import vue.V_Praticiens;
+import vue.VuePraticien;
 
 /**
  * Contrôleur de la fenêtre VuePresence
@@ -18,14 +18,14 @@ import vue.V_Praticiens;
  * @author nbourgeois
  * @version 1 20 novembre 2013
  */
-public class C_Praticien extends C_Abstrait {
+public class CtrlPraticien extends CtrlAbstrait {
     
    private DaoPraticien daoPraticien = new DaoPraticien();
 
 
-    public C_Praticien(C_Principal ctrlPrincipal) {
+    public CtrlPraticien(CtrlPrincipal ctrlPrincipal) {
         super(ctrlPrincipal);
-        vue = new V_Praticiens(this);
+        vue = new VuePraticien(this);
         actualiser();
     }
 
@@ -54,14 +54,14 @@ public class C_Praticien extends C_Abstrait {
             msg = "Saisie incomplète";
             typeMsg = JOptionPane.WARNING_MESSAGE;
         } else {
-        getVue().getTxtAdresse().setText(praticienSelect.getPra_Adresse());
-        getVue().getTxtCodePostal().setText(praticienSelect.getPra_Cp());
-        getVue().getTxtCoeffNotoriete().setText(praticienSelect.getPra_CoefNotoriete().toString());
-        getVue().getTxtLieuExercice().setText(praticienSelect.getType_Practicien().getTyp_Lieu());
-        getVue().getTxtNom().setText(praticienSelect.getPra_Nom());
-        getVue().getTxtNumero().setText(String.valueOf(praticienSelect.getPra_Num()));
+        getVue().getTxtAdresse().setText(praticienSelect.getPraticien_Adresse());
+        getVue().getTxtCodePostal().setText(praticienSelect.getPraticien_Cp());
+        getVue().getTxtCoeffNotoriete().setText(praticienSelect.getPraticien_CoefNotoriete().toString());
+        getVue().getTxtLieuExercice().setText(praticienSelect.getType_Practicien().getLieu());
+        getVue().getTxtNom().setText(praticienSelect.getPraticien_Nom());
+        getVue().getTxtNumero().setText(String.valueOf(praticienSelect.getPraticien_Num()));
         getVue().getTxtPrenom().setText(praticienSelect.getPra_Prenom());
-        getVue().getTxtVille().setText(praticienSelect.getPra_Ville());
+        getVue().getTxtVille().setText(praticienSelect.getPraticien_Ville());
              
     }
     }
@@ -106,8 +106,8 @@ public class C_Praticien extends C_Abstrait {
     }
 
     @Override
-    public V_Praticiens getVue() {
-        return (V_Praticiens) vue;
+    public VuePraticien getVue() {
+        return (VuePraticien) vue;
     }
     
 }

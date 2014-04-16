@@ -3,14 +3,14 @@
  * and open the template in the editor.
  */
 
-package ctrl;
+package controleur;
 
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import modele.dao.*;
 import modele.metier.*;
-import vue.V_Visiteur;
+import vue.VueVisiteur;
 
 /**
  * Contrôleur de la fenêtre VuePresence
@@ -18,15 +18,15 @@ import vue.V_Visiteur;
  * @author nbourgeois
  * @version 1 20 novembre 2013
  */
-public class C_Visiteur extends C_Abstrait {
+public class CtrlVisiteur extends CtrlAbstrait {
     
    private DaoVisiteur daoVisiteur = new DaoVisiteur();
    private DaoLabo daoLabo = new DaoLabo();
 
 
-    public C_Visiteur(C_Principal ctrlPrincipal) {
+    public CtrlVisiteur(CtrlPrincipal ctrlPrincipal) {
         super(ctrlPrincipal);
-        vue = new V_Visiteur(this);
+        vue = new VueVisiteur(this);
         actualiser();
     }
 
@@ -57,13 +57,13 @@ public class C_Visiteur extends C_Abstrait {
             typeMsg = JOptionPane.WARNING_MESSAGE;
         } else {
       
-        getVue().getTxtAdresse().setText(visiteurSelect.getVis_Adresse());
-        getVue().getTxtCodePostal().setText(visiteurSelect.getVis_Cp());
-        getVue().getTxtNom().setText(visiteurSelect.getVis_Nom());
-        getVue().getTxtPrenom().setText(visiteurSelect.getVis_Prenom());
-        getVue().getTxtVille().setText(visiteurSelect.getVis_Ville());
+        getVue().getTxtAdresse().setText(visiteurSelect.getAdresse());
+        getVue().getTxtCodePostal().setText(visiteurSelect.getCp());
+        getVue().getTxtNom().setText(visiteurSelect.getNom());
+        getVue().getTxtPrenom().setText(visiteurSelect.getPrenom());
+        getVue().getTxtVille().setText(visiteurSelect.getVille());
         if(visiteurSelect.getSecteur()!=null){
-        getVue().getTxtSecteur().setText(visiteurSelect.getSecteur().getSec_Libelle());
+        getVue().getTxtSecteur().setText(visiteurSelect.getSecteur().getSecteur_Libelle());
         }else{
             getVue().getTxtSecteur().setText("pas de secteur");
         }
@@ -121,8 +121,8 @@ public class C_Visiteur extends C_Abstrait {
     }
 
     @Override
-    public V_Visiteur getVue() {
-        return (V_Visiteur) vue;
+    public VueVisiteur getVue() {
+        return (VueVisiteur) vue;
     }
     
 }

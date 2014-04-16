@@ -9,43 +9,43 @@ package modele.metier;
  * @author btssio
  */
 public class Type_Praticien {
-    String typ_Code;
-    String typ_Libelle;
-    String typ_Lieu;
+    String code;
+    String libelle;
+    String lieu;
 
-    public Type_Praticien(String typ_Code, String typ_Libelle, String typ_Lieu) {
-        this.typ_Code = typ_Code;
-        this.typ_Libelle = typ_Libelle;
-        this.typ_Lieu = typ_Lieu;
+    public Type_Praticien(String Code, String Libelle, String Lieu) {
+        this.code = Code;
+        this.libelle = Libelle;
+        this.lieu = Lieu;
     }
 
     @Override
     public String toString() {
-        return "Type_Practicien{" + "typ_Code=" + typ_Code + ", typ_Libelle=" + typ_Libelle + ", typ_Lieu=" + typ_Lieu + '}';
+        return "Type_Practicien{" + "typ_Code=" + code + ", typ_Libelle=" + libelle + ", typ_Lieu=" + lieu + '}';
     }
 
-    public String getTyp_Code() {
-        return typ_Code;
+    public String getCode() {
+        return code;
     }
 
-    public void setTyp_Code(String typ_Code) {
-        this.typ_Code = typ_Code;
+    public void setCode(String Code) {
+        this.code = Code;
     }
 
-    public String getTyp_Libelle() {
-        return typ_Libelle;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setTyp_Libelle(String typ_Libelle) {
-        this.typ_Libelle = typ_Libelle;
+    public void setLibelle(String Libelle) {
+        this.libelle = Libelle;
     }
 
-    public String getTyp_Lieu() {
-        return typ_Lieu;
+    public String getLieu() {
+        return lieu;
     }
 
-    public void setTyp_Lieu(String typ_Lieu) {
-        this.typ_Lieu = typ_Lieu;
+    public void setLieu(String Lieu) {
+        this.lieu = Lieu;
     }
     
     

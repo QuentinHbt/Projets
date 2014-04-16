@@ -4,8 +4,8 @@
  */
 package vue;
 
-import ctrl.C_Abstrait;
-import ctrl.C_Visiteur;
+import controleur.CtrlAbstrait;
+import controleur.CtrlVisiteur;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -14,13 +14,13 @@ import javax.swing.JTextField;
  *
  * @author btssio
  */
-public class V_Visiteur extends V_Abstraite {
+public class VueVisiteur extends VueAbstraite {
 DefaultComboBoxModel mcbChercher;
 DefaultComboBoxModel mcbLabo;
     /**
      * Creates new form V_Connexion
      */
-    public V_Visiteur(C_Abstrait ctrlAbstrait) {
+    public VueVisiteur(CtrlAbstrait ctrlAbstrait) {
         super(ctrlAbstrait);
         initComponents();
         mcbChercher= new DefaultComboBoxModel();
@@ -304,17 +304,17 @@ DefaultComboBoxModel mcbLabo;
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void btnSuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuivantActionPerformed
-         ((C_Visiteur)controleur).suivant();
+         ((CtrlVisiteur)controleur).suivant();
     }//GEN-LAST:event_btnSuivantActionPerformed
 
     private void btnFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermerActionPerformed
-          ((C_Visiteur)controleur).visiteurQuitter();
+          ((CtrlVisiteur)controleur).visiteurQuitter();
         
         
     }//GEN-LAST:event_btnFermerActionPerformed
 
     private void cbChercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbChercherActionPerformed
-        ((C_Visiteur)controleur).visiteurSelectionner();
+        ((CtrlVisiteur)controleur).visiteurSelectionner();
     }//GEN-LAST:event_cbChercherActionPerformed
 
     private void cbLaboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbLaboActionPerformed
@@ -322,7 +322,7 @@ DefaultComboBoxModel mcbLabo;
     }//GEN-LAST:event_cbLaboActionPerformed
 
     private void btnPrecedentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrecedentActionPerformed
-          ((C_Visiteur)controleur).precedant();
+          ((CtrlVisiteur)controleur).precedant();
     }//GEN-LAST:event_btnPrecedentActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -9,43 +9,43 @@ package modele.metier;
  * @author btssio
  */
 public class Region {
-    String reg_Code;
-    String reg_Nom;
+    String code;
+    String nom;
     Secteur secteur;
 
-    public Region(String reg_Code, String reg_Nom, Secteur secteur) {
-        this.reg_Code = reg_Code;
-        this.reg_Nom = reg_Nom;
-        this.secteur = secteur;
+    public Region(String Region_Code, String Region_Nom, Secteur Secteur) {
+        this.code = Region_Code;
+        this.nom = Region_Nom;
+        this.secteur = Secteur;
     }
 
     @Override
     public String toString() {
-        return "Region{" + "reg_Code=" + reg_Code + ", reg_Nom=" + reg_Nom + ", secteur=" + secteur + '}';
+        return "Region{" + "Code=" + code + ", Nom=" + nom + ", Secteur=" + secteur + '}';
     }
 
-    public String getReg_Code() {
-        return reg_Code;
+    public String getCode() {
+        return code;
     }
 
-    public void setReg_Code(String reg_Code) {
-        this.reg_Code = reg_Code;
+    public void setCode(String Code) {
+        this.code = Code;
     }
 
-    public String getReg_Nom() {
-        return reg_Nom;
+    public String getNom() {
+        return nom;
     }
 
-    public void setReg_Nom(String reg_Nom) {
-        this.reg_Nom = reg_Nom;
+    public void setNom(String Nom) {
+        this.nom = Nom;
     }
 
     public Secteur getSecteur() {
         return secteur;
     }
 
-    public void setSecteur(Secteur secteur) {
-        this.secteur = secteur;
+    public void setSecteur(Secteur Secteur) {
+        this.secteur = Secteur;
     }
     
 }

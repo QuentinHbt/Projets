@@ -16,7 +16,11 @@ import java.util.*;
 public class DaoPraticien implements DaoInterface<Praticien, Integer> {
 
     /**
-     * Non implémenté
+     * Create - non implémentée
+     * 
+     * @param unPraticien
+     * @return
+     * @throws Exception 
      */
     @Override
     public int create(Praticien unPraticien) throws Exception {
@@ -24,11 +28,11 @@ public class DaoPraticien implements DaoInterface<Praticien, Integer> {
     }
 
     /**
-     * Lire un enregistrement d'après son identifiant
+     * getOne - Lire un enregistrement d'après son identifiant
      *
-     * @param identifiant métier de l'objet recherché
+     * @param idPraticien métier de l'objet recherché
      * @return objet métier trouvé, ou null sinon
-     * @throws Exception
+     * @throws DaoException
      */
     @Override
     public Praticien getOne(Integer idPraticien) throws DaoException {
@@ -52,14 +56,14 @@ public class DaoPraticien implements DaoInterface<Praticien, Integer> {
     }
 
     /**
-     * getAll
-     *
-     * @return ArrayList de l'ensemble des occurences d'equipiers de la table
-     * EQUIPIER
+     * getAll - renvoi une liste des occurences de Praticien
+     * 
+     * @return
+     * @throws DaoException 
      */
     @Override
     public ArrayList<Praticien> getAll() throws DaoException {
-        ArrayList<Praticien> result = new ArrayList<Praticien>();
+        ArrayList<Praticien> result = new ArrayList<>();
         ResultSet rs;
         // préparer la requête
         String requete = "SELECT * FROM PRATICIEN"
@@ -79,7 +83,12 @@ public class DaoPraticien implements DaoInterface<Praticien, Integer> {
     }
 
     /**
-     * Non implémenté
+     * update - non implémentée
+     * 
+     * @param idMetier
+     * @param objetMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int update(Integer idMetier, Praticien objetMetier) throws Exception {
@@ -87,7 +96,11 @@ public class DaoPraticien implements DaoInterface<Praticien, Integer> {
     }
 
     /**
-     * Non implémenté
+     * delete - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int delete(Integer idMetier) throws Exception {
@@ -99,35 +112,30 @@ public class DaoPraticien implements DaoInterface<Praticien, Integer> {
     //  Méthodes privées
     //----------------------------------------------------------------------
     /**
-     * chargerUnEnregistrementEquipier Instancie un objet equipier avec les
-     * valeurs lues dans la base de données La jointure avec la table PRESENCE
-     * n'est pas effectuée
-     *
-     * @param rs enregistrement de la table Equipier courant
-     * @return un objet Equipier, dont la liste des "présences" n'est pas
-     * renseignée
-     * @throws DaoException
+     * chargerUnEnregistrement permet de charger un praticien
+     * 
+     * @param rs
+     * @return
+     * @throws DaoException 
      */
-    
     private Praticien chargerUnEnregistrement(ResultSet rs) throws DaoException {
         try {
             Praticien praticien = new Praticien(0,null,null,null,null,null,null,null);
-            praticien.setPra_Num(rs.getInt("PRA_NUM"));
-            praticien.setPra_Nom(rs.getString("PRA_NOM"));
+            praticien.setPraticien_Num(rs.getInt("PRA_NUM"));
+            praticien.setPraticien_Nom(rs.getString("PRA_NOM"));
             praticien.setPra_Prenom(rs.getString("PRA_PRENOM"));
-            praticien.setPra_Adresse(rs.getString("PRA_ADRESSE"));
-            praticien.setPra_Cp(rs.getString("PRA_CP"));
-            praticien.setPra_Ville(rs.getString("PRA_VILLE"));
-            praticien.setPra_CoefNotoriete(rs.getFloat("PRA_COEFNOTORIETE"));
+            praticien.setPraticien_Adresse(rs.getString("PRA_ADRESSE"));
+            praticien.setPraticien_Cp(rs.getString("PRA_CP"));
+            praticien.setPraticien_Ville(rs.getString("PRA_VILLE"));
+            praticien.setPraticien_CoefNotoriete(rs.getFloat("PRA_COEFNOTORIETE"));
             if(rs.getString("TYP_CODE")!=null){
                 Type_Praticien typePraticien = new Type_Praticien(null,null,null);
-                typePraticien.setTyp_Code(rs.getString("TYP_CODE"));
-                typePraticien.setTyp_Libelle(rs.getString("TYP_LIBELLE"));
-                typePraticien.setTyp_Lieu(rs.getString("TYP_LIEU"));
+                typePraticien.setCode(rs.getString("TYP_CODE"));
+                typePraticien.setLibelle(rs.getString("TYP_LIBELLE"));
+                typePraticien.setLieu(rs.getString("TYP_LIEU"));
                 praticien.setType_Practicien(typePraticien);
             }
-            
-          
+                     
             return praticien;
         } catch (SQLException ex) {
             throw new DaoException("DaoPraticien - chargerUnEnregistrement : pb JDBC\n" + ex.getMessage());

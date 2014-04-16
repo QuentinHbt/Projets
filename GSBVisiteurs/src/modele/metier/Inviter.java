@@ -9,27 +9,27 @@ package modele.metier;
  * @author btssio
  */
 public class Inviter {
-    Activite_Compl activite_Compl;
+    Activite_Complementaire activite_Complementaire;
     Praticien praticien;
     boolean specialisteON;
 
-    public Inviter(Activite_Compl activite_Compl, Praticien praticien, boolean specialisteON) {
-        this.activite_Compl = activite_Compl;
+    public Inviter(Activite_Complementaire activite_Complementaire, Praticien praticien, boolean specialisteON) {
+        this.activite_Complementaire = activite_Complementaire;
         this.praticien = praticien;
         this.specialisteON = specialisteON;
     }
 
     @Override
     public String toString() {
-        return "Inviter{" + "activite_Compl=" + activite_Compl + ", praticien=" + praticien + ", specialisteON=" + specialisteON + '}';
+        return "Inviter{" + "activite_Compl=" + activite_Complementaire + ", praticien=" + praticien + ", specialisteON=" + specialisteON + '}';
     }
 
-    public Activite_Compl getActivite_Compl() {
-        return activite_Compl;
+    public Activite_Complementaire getActivite_Complementaire() {
+        return activite_Complementaire;
     }
 
-    public void setActivite_Compl(Activite_Compl activite_Compl) {
-        this.activite_Compl = activite_Compl;
+    public void setActivite_Complementaire(Activite_Complementaire activite_Complementaire) {
+        this.activite_Complementaire = activite_Complementaire;
     }
 
     public Praticien getPraticien() {

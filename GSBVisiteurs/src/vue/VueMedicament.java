@@ -4,9 +4,9 @@
  */
 package vue;
 
-import ctrl.C_Abstrait;
-import ctrl.C_Connexion;
-import ctrl.C_Medicament;
+import controleur.CtrlAbstrait;
+import controleur.CtrlConnexion;
+import controleur.CtrlMedicament;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
@@ -16,12 +16,12 @@ import javax.swing.JTextField;
  *
  * @author btssio
  */
-public class V_Medicament extends V_Abstraite {
+public class VueMedicament extends VueAbstraite {
     DefaultComboBoxModel mcbNomCommercial;
     /**
      * Creates new form V_Connexion
      */
-    public V_Medicament(C_Abstrait ctrlAbstrait) {
+    public VueMedicament(CtrlAbstrait ctrlAbstrait) {
         super(ctrlAbstrait);
         initComponents();
         mcbNomCommercial= new DefaultComboBoxModel();
@@ -276,19 +276,19 @@ public class V_Medicament extends V_Abstraite {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbNomCommercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNomCommercialActionPerformed
-             ((C_Medicament)controleur).medicamentSelectionner();
+             ((CtrlMedicament)controleur).medicamentSelectionner();
     }//GEN-LAST:event_cbNomCommercialActionPerformed
 
     private void btnSuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuivantActionPerformed
-        ((C_Medicament)controleur).suivant();
+        ((CtrlMedicament)controleur).suivant();
     }//GEN-LAST:event_btnSuivantActionPerformed
 
     private void btnPrecedentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrecedentActionPerformed
-        ((C_Medicament)controleur).precedant();
+        ((CtrlMedicament)controleur).precedant();
     }//GEN-LAST:event_btnPrecedentActionPerformed
 
     private void btnQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitterActionPerformed
-        ((C_Medicament)controleur).medicamentQuitter();
+        ((CtrlMedicament)controleur).medicamentQuitter();
     }//GEN-LAST:event_btnQuitterActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

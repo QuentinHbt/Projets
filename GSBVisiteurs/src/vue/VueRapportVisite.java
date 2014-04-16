@@ -4,9 +4,9 @@
  */
 package vue;
 
-import ctrl.C_Abstrait;
-import ctrl.C_Rapport;
-import ctrl.C_Visiteur;
+import controleur.CtrlAbstrait;
+import controleur.CtrlRapport;
+import controleur.CtrlVisiteur;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author btssio
  */
-public class V_RapportDeVisite extends V_Abstraite {
+public class VueRapportVisite extends VueAbstraite {
 
     DefaultComboBoxModel mcbRapport;
     DefaultComboBoxModel mcbPraticien;
@@ -31,7 +31,7 @@ public class V_RapportDeVisite extends V_Abstraite {
     /**
      * Creates new form V_Connexion
      */
-    public V_RapportDeVisite(C_Abstrait ctrlAbstrait) {
+    public VueRapportVisite(CtrlAbstrait ctrlAbstrait) {
         super(ctrlAbstrait);
         initComponents();
         mcbRapport = new DefaultComboBoxModel();
@@ -426,33 +426,33 @@ public class V_RapportDeVisite extends V_Abstraite {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuivantActionPerformed
-        ((C_Rapport) controleur).suivant();
+        ((CtrlRapport) controleur).suivant();
     }//GEN-LAST:event_btnSuivantActionPerformed
 
     private void btnFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermerActionPerformed
-        ((C_Rapport) controleur).rapportQuitter();
+        ((CtrlRapport) controleur).rapportQuitter();
 
 
     }//GEN-LAST:event_btnFermerActionPerformed
 
     private void btnNouveauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNouveauActionPerformed
-         ((C_Rapport) controleur).nouveau();
+         ((CtrlRapport) controleur).nouveau();
     }//GEN-LAST:event_btnNouveauActionPerformed
 
     private void cbRapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRapportActionPerformed
-        ((C_Rapport) controleur).rapportSelectionner();
+        ((CtrlRapport) controleur).rapportSelectionner();
     }//GEN-LAST:event_cbRapportActionPerformed
 
     private void btnPrecedentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrecedentActionPerformed
-        ((C_Rapport) controleur).precedant();
+        ((CtrlRapport) controleur).precedant();
     }//GEN-LAST:event_btnPrecedentActionPerformed
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
-          ((C_Rapport) controleur).ajouter();
+          ((CtrlRapport) controleur).ajouter();
     }//GEN-LAST:event_btnAjouterActionPerformed
 
     private void btnAjouterEchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterEchActionPerformed
-         ((C_Rapport) controleur).menuEch();
+         ((CtrlRapport) controleur).menuEch();
     }//GEN-LAST:event_btnAjouterEchActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjouter;

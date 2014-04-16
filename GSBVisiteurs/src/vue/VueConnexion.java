@@ -4,8 +4,8 @@
  */
 package vue;
 
-import ctrl.C_Abstrait;
-import ctrl.C_Connexion;
+import controleur.CtrlAbstrait;
+import controleur.CtrlConnexion;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFormattedTextField;
@@ -19,13 +19,13 @@ import javax.swing.text.DefaultFormatterFactory;
  *
  * @author btssio
  */
-public class V_Connexion extends V_Abstraite {
+public class VueConnexion extends VueAbstraite {
 
 
     /**
      * Creates new form V_Connexion
      */
-    public V_Connexion(C_Abstrait ctrlAbstrait) {
+    public VueConnexion(CtrlAbstrait ctrlAbstrait) {
         super(ctrlAbstrait);
              initComponents();
   
@@ -163,11 +163,11 @@ public class V_Connexion extends V_Abstraite {
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
 
-        ((C_Connexion) controleur).seConnecter();
+        ((CtrlConnexion) controleur).seConnecter();
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void btnQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitterActionPerformed
-        ((C_Connexion) controleur).fichierQuitter();
+        ((CtrlConnexion) controleur).fichierQuitter();
     }//GEN-LAST:event_btnQuitterActionPerformed
 
     private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed

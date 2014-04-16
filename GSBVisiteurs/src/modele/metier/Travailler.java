@@ -14,50 +14,50 @@ public class Travailler {
     Visiteur visiteur;
     Date jjmmaa;
     Region region;
-    String tra_Role;
+    String travail_Role;
 
-    public Travailler(Visiteur visiteur, Date jjmmaa, Region region, String tra_Role) {
-        this.visiteur = visiteur;
-        this.jjmmaa = jjmmaa;
-        this.region = region;
-        this.tra_Role = tra_Role;
+    public Travailler(Visiteur Visiteur, Date Jjmmaa, Region Region, String Travail_Role) {
+        this.visiteur = Visiteur;
+        this.jjmmaa = Jjmmaa;
+        this.region = Region;
+        this.travail_Role = Travail_Role;
     }
 
     @Override
     public String toString() {
-        return "Travailler{" + "visiteur=" + visiteur + ", jjmmaa=" + jjmmaa + ", region=" + region + ", tra_Role=" + tra_Role + '}';
+        return "Travailler{" + "visiteur=" + visiteur + ", jjmmaa=" + jjmmaa + ", region=" + region + ", travail_Role=" + travail_Role + '}';
     }
 
     public Visiteur getVisiteur() {
         return visiteur;
     }
 
-    public void setVisiteur(Visiteur visiteur) {
-        this.visiteur = visiteur;
+    public void setVisiteur(Visiteur Visiteur) {
+        this.visiteur = Visiteur;
     }
 
     public Date getJjmmaa() {
         return jjmmaa;
     }
 
-    public void setJjmmaa(Date jjmmaa) {
-        this.jjmmaa = jjmmaa;
+    public void setJjmmaa(Date Jjmmaa) {
+        this.jjmmaa = Jjmmaa;
     }
 
     public Region getRegion() {
         return region;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public void setRegion(Region Region) {
+        this.region = Region;
     }
 
-    public String getTra_Role() {
-        return tra_Role;
+    public String getTravail_Role() {
+        return travail_Role;
     }
 
-    public void setTra_Role(String tra_Role) {
-        this.tra_Role = tra_Role;
+    public void setTravail_Role(String Travail_Role) {
+        this.travail_Role = Travail_Role;
     }
     
     

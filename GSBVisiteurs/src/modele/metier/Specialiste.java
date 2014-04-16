@@ -9,35 +9,33 @@ package modele.metier;
  * @author btssio
  */
 public class Specialiste {
-    String spe_Code;
-    String spe_Libelle;
+    String code;
+    String libelle;
 
-    public Specialiste(String spe_Code, String spe_Libelle) {
-        this.spe_Code = spe_Code;
-        this.spe_Libelle = spe_Libelle;
+    public Specialiste(String Specialiste_Code, String Specialiste_Libelle) {
+        this.code = Specialiste_Code;
+        this.libelle = Specialiste_Libelle;
     }
 
     @Override
     public String toString() {
-        return "Specialiste{" + "spe_Code=" + spe_Code + ", spe_Libelle=" + spe_Libelle + '}';
+        return "Specialiste{" + "Code=" + code + ", Libelle=" + libelle + '}';
     }
 
-    public String getSpe_Code() {
-        return spe_Code;
+    public String getCode() {
+        return code;
     }
 
-    public void setSpe_Code(String spe_Code) {
-        this.spe_Code = spe_Code;
+    public void setCode(String Code) {
+        this.code = Code;
     }
 
-    public String getSpe_Libelle() {
-        return spe_Libelle;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setSpe_Libelle(String spe_Libelle) {
-        this.spe_Libelle = spe_Libelle;
+    public void setLibelle(String Libelle) {
+        this.libelle = Libelle;
     }
-    
-    
-    
+      
 }

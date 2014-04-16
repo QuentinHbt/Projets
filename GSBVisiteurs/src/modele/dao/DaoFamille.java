@@ -11,12 +11,17 @@ import java.sql.*;
 import java.util.*;
 
 /**
- * Classe DAO pour la classe Visiteur
+ * Classe DAO pour la Classe Famille
+ * @author Benoit
  */
 public class DaoFamille implements DaoInterface<Famille, Integer> {
 
     /**
-     * Non implémenté
+     * Create - non implémentée
+     * 
+     * @param uneFamille
+     * @return
+     * @throws Exception 
      */
     @Override
     public int create(Famille uneFamille) throws Exception {
@@ -24,11 +29,11 @@ public class DaoFamille implements DaoInterface<Famille, Integer> {
     }
 
     /**
-     * Lire un enregistrement d'après son identifiant
+     * GetOne - Lire un enregistrement d'après son identifiant
      *
-     * @param identifiant métier de l'objet recherché
+     * @param idFamille métier de l'objet recherché
      * @return objet métier trouvé, ou null sinon
-     * @throws Exception
+     * @throws DaoException
      */
         public Famille getOne(String idFamille) throws DaoException {
         Famille result = null;
@@ -49,7 +54,7 @@ public class DaoFamille implements DaoInterface<Famille, Integer> {
     }
 
     /**
-     * getAll
+     * GetAll
      *
      * @return ArrayList de l'ensemble des occurences d'equipiers de la table
      * EQUIPIER
@@ -75,7 +80,12 @@ public class DaoFamille implements DaoInterface<Famille, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Update - non implémentée
+     * 
+     * @param idMetier
+     * @param objetMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int update(Integer idMetier, Famille objetMetier) throws Exception {
@@ -83,7 +93,11 @@ public class DaoFamille implements DaoInterface<Famille, Integer> {
     }
 
     /**
-     * Non implémenté
+     * Delete - non implémentée
+     * 
+     * @param idMetier
+     * @return
+     * @throws Exception 
      */
     @Override
     public int delete(Integer idMetier) throws Exception {
@@ -94,20 +108,18 @@ public class DaoFamille implements DaoInterface<Famille, Integer> {
     //  Méthodes privées
     //----------------------------------------------------------------------
     /**
-     * chargerUnEnregistrementEquipier Instancie un objet equipier avec les
-     * valeurs lues dans la base de données La jointure avec la table PRESENCE
-     * n'est pas effectuée
+     * chargerUnEnregistrement Instancie un objet famille avec les
+     * valeurs lues dans la base de données 
      *
-     * @param rs enregistrement de la table Equipier courant
-     * @return un objet Equipier, dont la liste des "présences" n'est pas
-     * renseignée
+     * @param rs enregistrement de la table Famille courant
+     * @return un objet famille
      * @throws DaoException
      */
     private Famille chargerUnEnregistrement(ResultSet rs) throws DaoException {
         try {
             Famille famille = new Famille(null,null);
-            famille.setFam_Code(rs.getString("FAM_CODE"));
-            famille.setFam_Libelle(rs.getString("FAM_LIBELLE"));
+            famille.setFamille_Code(rs.getString("FAM_CODE"));
+            famille.setFamille_Libelle(rs.getString("FAM_LIBELLE"));
             
             return famille;
         } catch (SQLException ex) {
@@ -115,8 +127,10 @@ public class DaoFamille implements DaoInterface<Famille, Integer> {
         }
     } 
 
+    
     @Override
     public Famille getOne(Integer idMetier) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }
